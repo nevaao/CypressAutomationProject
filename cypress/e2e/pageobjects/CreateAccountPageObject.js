@@ -9,6 +9,7 @@ const ConfirmCreateAccount = () => cy.get("button[title = 'Create an Account']")
 class CreateAccountPageObject {
     // Preenche os campos do cadastro
     fillInFields(camposCadastro) {
+        cy.wait(1000);
         camposCadastro.hashes().forEach(row => {
             const campo = row.Campo;
             const valor = row.Valor;
@@ -48,6 +49,7 @@ class CreateAccountPageObject {
 
     // Clica no botão para confirmar o cadastro
     confirmCreateAccount() {
+        cy.wait(1000);
         ConfirmCreateAccount().click();
     }
 }
