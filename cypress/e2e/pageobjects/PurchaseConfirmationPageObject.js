@@ -2,6 +2,7 @@ const ButtonContinueShopping = () => cy.get("a[class*='continue']");
 const ButtonCreateAnAccount = () => cy.get("#registration a[href*='account/delegateCreate']");
 
 class PurchaseConfirmationPageObject {
+    // Valida as opções disponíveis após finalizar a compra
     validateOptions(opcoes) {
         opcoes.hashes().forEach(row => {
             const opcao = row.Opcao;
