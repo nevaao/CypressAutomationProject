@@ -5,6 +5,7 @@ const SignIn = () => cy.get(".login-container #send2");
 class CustomerLoginPageObject {
     // Preenche os campos do login
     fillInFields(camposLogin) {
+        cy.wait(1000);
         camposLogin.hashes().forEach(row =>{
             const campo = row.Campo;
             const valor = row.Valor;
@@ -27,6 +28,7 @@ class CustomerLoginPageObject {
 
     // Clica no botão para confirmar o login
     signIn() {
+        cy.wait(1000);
         SignIn().click();
     }
 }
