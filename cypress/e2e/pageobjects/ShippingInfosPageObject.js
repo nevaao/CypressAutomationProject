@@ -12,6 +12,8 @@ const Next = () => cy.get("button[data-role*='continue']");
 class ShippingInfosPageObject {
     // Preenche os campos do endereço de entrega
     fillInFields(camposEnderecoEntrega) {
+        cy.get('#shipping > .step-title', { timeout: 30000 }).should("exist");
+        
         camposEnderecoEntrega.hashes().forEach(row => {
             const campo = row.Campo;
             const valor = row.Valor;
@@ -67,6 +69,7 @@ class ShippingInfosPageObject {
 
     // Avança para a etapa de pagamento
     next() {
+        cy.wait(1000);
         Next().click();
     }
 }
